@@ -9,4 +9,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="mediumSeaGreen">#3CB371</color>
+    <color name="darkSeaGreen">#438d80</color>
+    <color name="lightSeaGreen">#81d8d0</color>
+    <color name="lightGray">#D3D3D3</color>
 </resources>

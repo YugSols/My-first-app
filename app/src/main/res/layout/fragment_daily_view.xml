@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/mediumSeaGreen"
+        app:cardBackgroundColor="@color/darkSeaGreen"
         style="@style/CardStyle">
 
         <LinearLayout
@@ -90,9 +90,9 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="12dp"
                 android:src="@mipmap/ic_next_calendar"
-                android:layout_marginStart="10dp" />
+                android:layout_marginLeft="12dp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
@@ -104,5 +104,133 @@
         android:layout_margin="20dp"
         style="@style/CardStyle">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightGray"
+                android:text="@string/income"
+                android:textAlignment="center"
+                android:textColor="@color/darkSeaGreen"
+                android:textSize="20sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/daily_income_list_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_income"
+                    android:textColor="@color/darkSeaGreen"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView_total_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="119dp"
+                    android:layout_marginRight="119dp"
+                    android:text="0.00"
+                    android:textColor="@color/darkSeaGreen"
+                    android:textSize="20sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/button_add_new_income"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@mipmap/ic_add" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/daily_expense_card"
+        style="@style/CardStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/daily_income_card"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lightGray"
+                android:text="@string/expense"
+                android:textAlignment="center"
+                android:textColor="@color/darkSeaGreen"
+                android:textSize="20sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/daily_expense_list_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_expense"
+                    android:textColor="@color/darkSeaGreen"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView_total_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="112dp"
+                    android:layout_marginRight="112dp"
+                    android:text="0.00"
+                    android:textColor="@color/darkSeaGreen"
+                    android:textSize="20sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/button_add_new_expense"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@mipmap/ic_add" />
+            </RelativeLayout>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>
