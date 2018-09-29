@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) by Sujoy Datta. Created on 2018. For any issues please contact sujoydatta26@gmail.com
+ */
+
 package com.ua.dailyexpensetracker;
 
 import android.content.Context;

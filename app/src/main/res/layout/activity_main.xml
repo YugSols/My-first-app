@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) by Sujoy Datta. Created on 2018. For any issues please contact sujoydatta26@gmail.com
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +13,21 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_activity_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/mediumSeaGreen">
     </android.support.v7.widget.Toolbar>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/main_activity_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_activity_toolbar">
+
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/main_activity_pager_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mediumSeaGreen">
+        </android.support.v4.view.PagerTabStrip>
     </android.support.v4.view.ViewPager>
 </RelativeLayout>
