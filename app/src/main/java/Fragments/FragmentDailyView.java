@@ -18,6 +18,7 @@ import com.ua.dailyexpensetracker.R;
 
 import java.util.Date;
 
+import Managers.ConstantsManager;
 import Managers.DateManager;
 
 public class FragmentDailyView extends Fragment {
@@ -37,19 +38,22 @@ public class FragmentDailyView extends Fragment {
         textView_today_date = view.findViewById(R.id.textView_today_date);
         textView_today_month = view.findViewById(R.id.textView_today_month);
         textView_today_day = view.findViewById(R.id.textView_today_day);
+
+        //setting up the date values in the top tab
         setUpDate();
+
         return view;
     }
 
     @SuppressLint("SetTextI18n")
     private void setUpDate() {
-        int current_date = DateManager.getDateValuesAsInt()[0];
+        int current_date = ConstantsManager.CURRENT_DATE;
         textView_today_date.setText(String.valueOf(current_date));
 
-        String current_month_name = DateManager.getStringNameForMonthValue(DateManager.getDateValuesAsInt()[1]);
-        int current_year = DateManager.getDateValuesAsInt()[2];
-
+        String current_month_name = DateManager.getStringNameForMonthValue(ConstantsManager.CURRENT_MONTH);
+        int current_year = ConstantsManager.CURRENT_YEAR;
         textView_today_month.setText(current_month_name + ", " + current_year);
+
         textView_today_day.setText("" + DateManager.getDayNameForDate(new Date()));
     }
     public static FragmentDailyView newInstance(){
