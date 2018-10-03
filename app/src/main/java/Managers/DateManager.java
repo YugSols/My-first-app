@@ -71,6 +71,31 @@ public class DateManager {
     }
 
     /**
+     * This method takes in an int value and converts them to suitable day name.
+     * For example: 1 = Sunday, 2 = Monday
+     */
+    public static String getDayNameForIntValue(int value) {
+        switch (value) {
+            case 1:
+                return "Sunday";
+            case 2:
+                return "Monday";
+            case 3:
+                return "Tuesday";
+            case 4:
+                return "Wednesday";
+            case 5:
+                return "Thursday";
+            case 6:
+                return "Friday";
+            case 7:
+                return "Saturday";
+            default:
+                return "Please choose appropriate value";
+        }
+    }
+
+    /**
      * This method takes in a date object and returns a string with the name of day
      */
     public static String getDayNameForDate(Date date) {
