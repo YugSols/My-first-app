@@ -1,7 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="Formal">
+  <settings>
     <module2copyright>
-      <element module="All" copyright="Formal" />
+      <element module="All" copyright="Sujoy Datta" />
     </module2copyright>
   </settings>
 </component>
