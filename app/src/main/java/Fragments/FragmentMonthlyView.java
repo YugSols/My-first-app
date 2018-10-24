@@ -15,9 +15,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ua.dailyexpensetracker.R;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import Managers.ConstantsManager;
 import Managers.DateManager;
@@ -26,7 +30,10 @@ public class FragmentMonthlyView extends Fragment {
 
     private static final String TAG = "FragmentMonthlyView";
     private View view;
-    private TextView textView_today_month;
+    private TextView textView_monthlyview_today_month;
+    private ImageView prev_calendar_month, next_calendar_month;
+
+    private int increment_count = 0;
 
     public FragmentMonthlyView() {
         //empty constructor required
@@ -41,13 +48,48 @@ public class FragmentMonthlyView extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_monthly_view, container, false);
 
-        textView_today_month = view.findViewById(R.id.monthlyView_textView_today_month);
+        textView_monthlyview_today_month = view.findViewById(R.id.monthlyView_textView_today_month);
+        prev_calendar_month = view.findViewById(R.id.icon_prev_calender_month);
+        next_calendar_month = view.findViewById(R.id.icon_next_calendar_month);
 
-        String current_month = DateManager.getStringNameForMonthValue(ConstantsManager.CURRENT_MONTH);
-        int year = ConstantsManager.CURRENT_YEAR;
-        String month_and_year = current_month + " , " + year;
-        textView_today_month.setText(month_and_year);
+        increment_count = 0;
+
+        setUpDate();
+
+        prev_calendar_month.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpDate(increment_count -= 1);
+            }
+        });
+
+        next_calendar_month.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpDate(increment_count += 1);
+            }
+        });
 
         return view;
     }
+
+    private void setUpDate() {
+        String current_month = DateManager.getStringNameForMonthValue(ConstantsManager.CURRENT_MONTH);
+        int year = ConstantsManager.CURRENT_YEAR;
+        String month_and_year = current_month + " , " + year;
+        textView_monthlyview_today_month.setText(month_and_year);
+    }
+
+    private void setUpDate(int value) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, value);
+        Date nextDate = calendar.getTime();
+
+        String current_month = DateManager.getStringNameForMonthValue(calendar.get(Calendar.MONTH) + 1);
+        int year = calendar.get(Calendar.YEAR);
+        String month_and_year = current_month + " , " + year;
+
+        textView_monthlyview_today_month.setText(month_and_year);
+    }
+
 }

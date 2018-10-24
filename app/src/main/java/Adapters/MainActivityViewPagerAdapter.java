@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import Fragments.FragmentDailyView;
 import Fragments.FragmentMonthlyView;
+import Fragments.FragmentYearlyView;
 
 public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -26,6 +27,8 @@ public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
                 return FragmentDailyView.newInstance();
             case 1:
                 return FragmentMonthlyView.newInstance();
+            case 2:
+                return FragmentYearlyView.newInstance();
             default:
                 return null;
         }
@@ -33,7 +36,7 @@ public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
